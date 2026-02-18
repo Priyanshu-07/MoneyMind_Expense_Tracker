@@ -1,5 +1,7 @@
 package com.moneymind.Backend.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -26,5 +28,6 @@ public class Category {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @JsonBackReference("user-category")
     private User user;          // null = default/global category
 }

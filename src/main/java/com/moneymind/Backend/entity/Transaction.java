@@ -1,5 +1,6 @@
 package com.moneymind.Backend.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 import java.math.BigDecimal;
@@ -35,7 +36,8 @@ public class Transaction {
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
-    private com.monyemind.Backend.entity.User user;
+    @JsonBackReference("user-transaction")
+    private User user;
 
     @ManyToOne
     @JoinColumn(name = "category_id")
