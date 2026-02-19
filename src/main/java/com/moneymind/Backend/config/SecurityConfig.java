@@ -36,8 +36,7 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(List.of("http://localhost:3000",
-                "https://moneymindexpensetracker-production.up.railway.app", "https://your-frontend-domain.com" ));
+        config.setAllowedOrigins(List.of("http://localhost:3000", "https://moneymind-frontend-five.vercel.app"));
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         config.setAllowedHeaders(List.of("*"));
         config.setAllowCredentials(true);
